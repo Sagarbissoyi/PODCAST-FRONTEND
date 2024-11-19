@@ -317,6 +317,8 @@ import axios from 'axios';
 import PodcastCard from '../PodcastCard/PodcastCard';
 import deploylink from '../../deplomentvaraible/title';
 
+
+
 const YourPodcasts = () => {
   const [Podcasts, setPodcasts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -328,6 +330,7 @@ const YourPodcasts = () => {
         const res = await axios.get(`${deploylink}/api/v1/get-user-podcasts`, {
           withCredentials: true,
         });
+        if(res.data.data=!undefined)
         setPodcasts(res.data.data);
       } catch (error) {
         console.error("Error fetching podcasts:", error);
@@ -343,7 +346,7 @@ const YourPodcasts = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this podcast?")) {
       try {
-        await axios.delete(`http://localhost:1000/api/v1/delete-podcast/${id}`, { withCredentials: true });
+        await axios.delete(`${deploylink}/api/v1/delete-podcast/${id}`, { withCredentials: true });
         setPodcasts((prevPodcasts) => prevPodcasts.filter((podcast) => podcast._id !== id));
       } catch (error) {
         console.error("Error deleting podcast:", error);
