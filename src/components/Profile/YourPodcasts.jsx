@@ -315,6 +315,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import PodcastCard from '../PodcastCard/PodcastCard';
+import deploylink from '../../deplomentvaraible/title';
 
 const YourPodcasts = () => {
   const [Podcasts, setPodcasts] = useState([]);
@@ -324,7 +325,7 @@ const YourPodcasts = () => {
   useEffect(() => {
     const fetchPodcasts = async () => {
       try {
-        const res = await axios.get("http://localhost:1000/api/v1/get-user-podcasts", {
+        const res = await axios.get(`${deploylink}/api/v1/get-user-podcasts`, {
           withCredentials: true,
         });
         setPodcasts(res.data.data);
