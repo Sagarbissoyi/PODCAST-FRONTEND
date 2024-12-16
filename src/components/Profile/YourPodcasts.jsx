@@ -415,7 +415,7 @@ const YourPodcasts = () => {
   useEffect(() => {
     const fetchPodcasts = async () => {
       try {
-        const res = await axios.get(`${deploylink}/api/v1/get-user-podcasts`, {
+        const res = await axios.get("https://podcast-backend-9t5w.onrender.com/api/v1/get-user-podcasts", {
           withCredentials: true,
         });
         setPodcasts(res.data.data);
@@ -433,7 +433,7 @@ const YourPodcasts = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this podcast?")) {
       try {
-        await axios.delete(`${deploylink}/api/v1/delete-podcast/${id}`, { withCredentials: true });
+        await axios.delete(`https://podcast-backend-9t5w.onrender.com/api/v1/delete-podcast/${id}`, { withCredentials: true });
         setPodcasts((prevPodcasts) => prevPodcasts.filter((podcast) => podcast._id !== id));
       } catch (error) {
         console.error("Error deleting podcast:", error);
