@@ -122,7 +122,7 @@ const Header = () => {
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        const res = await axios.get(`${deploylink}/api/v1/user-details`, {
+        const res = await axios.get("http://localhost:1000/api/v1/user-details", {
           withCredentials: true, // Include credentials (cookies)
         });
         setUserData(res.data.user); // Update user data state
@@ -138,7 +138,7 @@ const Header = () => {
   const logoutHandler = async () => {
     try {
       await axios.post(
-          `${deploylink}/api/v1/logout`,
+        "http://localhost:1000/api/v1/logout",
         {},
         { withCredentials: true } // Include credentials (cookies)
       );
@@ -176,5 +176,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
