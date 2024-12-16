@@ -405,6 +405,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import PodcastCard from '../PodcastCard/PodcastCard';
+ import deploylink from '../../deplomentvaraible/title';
 
 const YourPodcasts = () => {
   const [Podcasts, setPodcasts] = useState([]);
