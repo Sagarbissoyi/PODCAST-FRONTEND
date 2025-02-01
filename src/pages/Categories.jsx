@@ -100,7 +100,7 @@ const Categories = () => {
       name: "Governement ",
       color: " bg-indigo-200",
       to: "/categories/Governement ",
-      img: "https://www.whitehouse.gov/wp-content/uploads/2021/01/us-capitol.jpg ",
+      img: "https://plus.unsplash.com/premium_photo-1697730373168-254777738f53?q=80&w=2280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     
   ];
